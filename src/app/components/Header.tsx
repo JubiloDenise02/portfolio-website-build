@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { HiBars3 } from "react-icons/hi2";
+import { HiMenu } from "react-icons/hi"; 
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -67,7 +67,7 @@ const Header = () => {
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden p-2 rounded text-white/80 hover:text-[#e3874f] transition duration-200"
         >
-          <HiBars3 size={24} />
+          <HiMenu size={24} />
         </button>
       </div>
 
