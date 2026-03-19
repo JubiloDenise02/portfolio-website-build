@@ -95,7 +95,7 @@ const Skills = () => {
     <section id="skills" className="py-24">
 
       {/* Divider */}
-      <div className="relative mt-6 mb-8 w-150 h-[3px] mx-auto">
+      <div className="relative mt-6 mb-8 w-150 h-0.75 mx-auto">
         <div className="absolute inset-0 rounded-full bg-linear-to-r from-red-500 via-[#ecc28a] to-orange-400" />
         <div className="absolute inset-0 rounded-full blur-md opacity-70 bg-linear-to-r from-red-500 via-[#ecc28a] to-orange-400" />
       </div>
