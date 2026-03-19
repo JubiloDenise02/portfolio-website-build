@@ -1,15 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Code2, Database, Bug, Brain, ClipboardList, Workflow, ChevronDown } from "lucide-react";
+import { Code2, Database, Bug, Brain, ClipboardList, Workflow } from "lucide-react";
+
 const Skills = () => {
   const [mode, setMode] = useState<"dev" | "qa" | "soft">("dev");
   const [animate, setAnimate] = useState(false);
-  const [openCards, setOpenCards] = useState<string[]>([]);
 
   useEffect(() => {
     setAnimate(false);
-    setOpenCards([]);
     const timer = setTimeout(() => setAnimate(true), 200);
     return () => clearTimeout(timer);
   }, [mode]);
@@ -91,22 +90,16 @@ const Skills = () => {
 
   const activeSkills =
     mode === "dev" ? developerSkills : mode === "qa" ? qaSkills : softSkills;
-  
-    const toggleCard = (id: string) => {
-    setOpenCards((prev) =>
-      prev.includes(id)
-        ? prev.filter((card) => card !== id)
-        : [...prev, id]
-    );
-  };
 
   return (
     <section id="skills" className="py-24">
-      {/* Styled Line Divider */}
-          <div className="relative mt-6 mb-8 w-150 h-[3px] mx-auto">
-            <div className="absolute inset-0 rounded-full bg-linear-to-r from-red-500 via-[#ecc28a] to-orange-400" />
-            <div className="absolute inset-0 rounded-full blur-md opacity-70 bg-linear-to-r from-red-500 via-[#ecc28a] to-orange-400" />
-          </div>
+
+      {/* Divider */}
+      <div className="relative mt-6 mb-8 w-150 h-[3px] mx-auto">
+        <div className="absolute inset-0 rounded-full bg-linear-to-r from-red-500 via-[#ecc28a] to-orange-400" />
+        <div className="absolute inset-0 rounded-full blur-md opacity-70 bg-linear-to-r from-red-500 via-[#ecc28a] to-orange-400" />
+      </div>
+
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-3xl sm:text-4xl font-semibold text-center mb-12">
           Tech and Soft <span className="text-[#ecc28a]">Skills</span>
@@ -136,68 +129,48 @@ const Skills = () => {
         {/* Cards */}
         <div
           className={`grid gap-12 justify-items-center items-start
-            ${
-              activeSkills.length === 1
-                ? "grid-cols-1"
-                : activeSkills.length === 2
-                ? "grid-cols-1 md:grid-cols-2"
-                : "grid-cols-1 md:grid-cols-3"
-            }`}
+          ${
+            activeSkills.length === 1
+              ? "grid-cols-1"
+              : activeSkills.length === 2
+              ? "grid-cols-1 md:grid-cols-2"
+              : "grid-cols-1 md:grid-cols-3"
+          }`}
         >
-          {activeSkills.map((category, index) => {
-            const cardId = `${mode}-${index}`;
-            const isOpen = openCards.includes(cardId);
-
-            return (
-              <div
-                key={cardId}
-                onClick={() => toggleCard(cardId)}
-                className="group relative cursor-pointer w-full max-w-md rounded-2xl p-8 min-h-[110px] border border-white/10 bg-gradient-to-br from-[#3f3e45] via-[#37363d] to-[#2f2e34] transition-all duration-300 hover:border-[#ecc28a]/60 hover:shadow-[0_0_40px_rgba(236,194,138,0.35)] hover:-translate-y-1"
-              >
-                {/* Glow Layer */}
-                <div className="absolute inset-0 rounded-2xl pointer-events-none bg-gradient-to-br from-transparent to-transparent group-hover:from-[#ecc28a]/5 group-hover:to-[#ecc28a]/10 transition-all duration-500" />
-
-                <div className="relative z-10">
-                  <div className="flex items-center gap-3 font-bold text-white">
-                    {category.icon}
-                      {category.title}
-                  </div>
-
-                  {isOpen && (
-                    <div className="mt-6 space-y-6 text-white/70">
-                      {category.skills.map((skill, i) => (
-                        <div key={i}>
-                          <div className="flex justify-between text-sm mb-2 text-white/80">
-                            <span>{skill.name}</span>
-                            <span>{skill.level}%</span>
-                          </div>
-
-                          <div className="mb-8 w-full h-2 bg-white/10 rounded-full overflow-hidden">
-                            <div
-                              className="h-full bg-[#ecc28a] transition-all duration-1000 ease-out"
-                              style={{
-                                width: animate
-                                  ? `${skill.level}%`
-                                  : "0%",
-                              }}
-                            />
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  )}
+          {activeSkills.map((category, index) => (
+            <div
+              key={index}
+              className="relative w-full max-w-md rounded-2xl p-8 border border-white/10 bg-gradient-to-br from-[#3f3e45] via-[#37363d] to-[#2f2e34] transition-all duration-300"
+            >
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 font-bold text-white">
+                  {category.icon}
+                  {category.title}
                 </div>
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 pointer-events-none">
-                  <ChevronDown
-                    size={22}
-                    className={`text-[#ecc28a] transition-transform duration-300 ${
-                      isOpen ? "rotate-180" : ""
-                    }`}
-                  />
+
+                {/* Skills */}
+                <div className="mt-6 space-y-6 text-white/70">
+                  {category.skills.map((skill, i) => (
+                    <div key={i}>
+                      <div className="flex justify-between text-sm mb-2 text-white/80">
+                        <span>{skill.name}</span>
+                        <span>{skill.level}%</span>
+                      </div>
+
+                      <div className="mb-8 w-full h-2 bg-white/10 rounded-full overflow-hidden">
+                        <div
+                          className="h-full bg-[#ecc28a] transition-all duration-1000 ease-out"
+                          style={{
+                            width: animate ? `${skill.level}%` : "0%",
+                          }}
+                        />
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </section>
