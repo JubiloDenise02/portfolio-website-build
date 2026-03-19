@@ -95,7 +95,7 @@ const AboutSection = () => {
                 <div className="mt-6 text-white/70 leading-7">
                   <div className="relative w-full h-44 rounded-xl overflow-hidden mb-6">
                     <Image
-                      src="/images/intern2.jpg"
+                      src="/images/Intern2.jpg"
                       alt="Internship 2"
                       fill
                       className="object-cover"
@@ -157,7 +157,7 @@ const AboutSection = () => {
                 <div className="mt-6 text-white/70 leading-7">
                   <div className="relative w-full h-44 rounded-xl overflow-hidden mb-6">
                     <Image
-                      src="/images/intern1.jpg"
+                      src="/images/Intern1.jpg"
                       alt="Internship 1"
                       fill
                       className="object-cover"
