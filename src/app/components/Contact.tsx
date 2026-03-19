@@ -71,7 +71,7 @@ const Contact = () => {
       {/* ===== Resume ===== */}
       <div className="text-center mt-16">
         <a
-          href="/pdfs/DENISE IRA JUBILO - RESUME.pdf"
+          href="/pdfs/JUBILO, DENISE IRA - RESUME.pdf"
           download
           className="inline-block px-10 py-4 rounded-full border border-[#ecc28a]/50 text-[#ecc28a] font-semibold text-lg hover:bg-[#ecc28a] hover:text-black transition-all duration-300 hover:shadow-[0_0_25px_rgba(236,194,138,0.5)]"
         >
