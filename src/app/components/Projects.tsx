@@ -39,14 +39,14 @@ const Projects = () => {
     {
       title: "Portfolio Website",
       desc: "Personal portfolio website to showcase projects and skills.",
-      tech: ["HTML", "CSS", "JavaScript"],
+      tech: ["Next.js", "React", "Tailwind CSS", "Vercel"],
       image: "/images/profile.gif",
-      github: "https://github.com/JubiloDenise02/Portfolio-Website",
+      github: "https://github.com/JubiloDenise02/portfolio-website-build",
     },
     {
       title: "Collision Detection Game",
       desc: "Interactive game with collision detection mechanics like shooting game.",
-      tech: ["Next.js", "React", "Tailwind CSS", "Vercel"],
+      tech: ["HTML", "CSS", "JavaScript"],
       image: "/images/collisiongame.gif",
       github: "https://github.com/JubiloDenise02/portfolio-website-build",
     },
