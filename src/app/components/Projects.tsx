@@ -40,7 +40,7 @@ const Projects = () => {
       title: "Portfolio Website",
       desc: "Personal portfolio website to showcase projects and skills.",
       tech: ["HTML", "CSS", "JavaScript"],
-      image: "/images/portfolio.gif",
+      image: "/images/profile.gif",
       github: "https://github.com/JubiloDenise02/Portfolio-Website",
     },
     {
