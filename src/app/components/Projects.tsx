@@ -47,7 +47,7 @@ const Projects = () => {
       title: "Collision Detection Game",
       desc: "Interactive game with collision detection mechanics like shooting game.",
       tech: ["Next.js", "React", "Tailwind CSS", "Vercel"],
-      image: "/images/profile.gif",
+      image: "/images/collisiongame.gif",
       github: "https://github.com/JubiloDenise02/portfolio-website-build",
     },
     {
